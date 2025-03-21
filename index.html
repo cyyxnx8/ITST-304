@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click the Button Game - Home</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icons/icon-192x192.png">
+    <meta name="theme-color" content="#34495e">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            background: #2c3e50; /* Dark muted blue */
+            color: #ecf0f1; /* Light gray text */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .container {
+            max-width: 400px;
+            background: #34495e; /* Soft grayish blue */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 50px;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        button {
+            padding: 12px 20px;
+            font-size: 18px;
+            margin: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            color: white;
+        }
+
+        .easy { background-color: #27ae60; }
+        .medium { background-color: #f39c12; }
+        .hard { background-color: #c0392b; }
+
+        button:hover {
+            filter: brightness(85%);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Welcome to Click the Button Game! 🎮</h1>
+        <p>Select a difficulty level:</p>
+        <button class="easy" onclick="startGame('easy')">Easy (60s)</button>
+        <button class="medium" onclick="startGame('medium')">Medium (30s)</button>
+        <button class="hard" onclick="startGame('hard')">Hard (10s)</button>
+    </div>
+
+    <script>
+        function startGame(level) {
+            const time = level === 'easy' ? 60 : level === 'medium' ? 30 : 10;
+            window.location.href = `game.html?time=${time}`;
+        }
+    </script>
+
+</body>
+</html>
